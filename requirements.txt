@@ -1,0 +1,5 @@
+Flask
+pandas
+flask-sqlalchemy
+pymysql
+gunicorn
