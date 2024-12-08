@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Player Stats</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recherche de Joueurs de Tennis</h1>
+        <form method="POST" action="/search">
+            <input type="text" name="player_name" placeholder="Entrez le nom du joueur..." required>
+            <button type="submit">Rechercher</button>
+        </form>
+        
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        {% if player %}
+            <div class="player-stats">
+                <h2>Statistiques de {{ player['Player'] }}</h2>
+                <ul>
+                    <li><strong>Classement:</strong> {{ player['Rank'] }}</li>
+                    <li><strong>Points:</strong> {{ player['Points'] }}</li>
+                    <li><strong>Tournois joués:</strong> {{ player['Tournaments'] }}</li>
+                    <!-- Ajoutez d'autres statistiques si nécessaire -->
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

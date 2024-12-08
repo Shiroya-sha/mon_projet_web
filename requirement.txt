@@ -1,2 +1,0 @@
-flask
-azure-storage-blob
