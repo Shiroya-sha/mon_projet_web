@@ -4,7 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Charger les données depuis le CSV
-data = pd.read_csv('atp_ranking.csv')
+data = pd.read_csv('atp_ranking.csv', sep = ';')
 
 @app.route('/')
 def home():
@@ -17,7 +17,7 @@ def search():
         return render_template('index.html', error="Veuillez entrer un nom de joueur.")
     
     # Filtrer les données pour trouver le joueur
-    player_data = data[data['Player'].str.contains(player_name, case=False, na=False)]
+    player_data = data[data['player'].str.contains(player_name, case=False, na=False)]
     if player_data.empty:
         return render_template('index.html', error="Joueur non trouvé.")
     

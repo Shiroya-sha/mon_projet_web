@@ -20,12 +20,12 @@
         
         {% if player %}
             <div class="player-stats">
-                <h2>Statistiques de {{ player['Player'] }}</h2>
+                <h2>Statistiques de {{ player['player'] }}</h2>
                 <ul>
-                    <li><strong>Classement:</strong> {{ player['Rank'] }}</li>
-                    <li><strong>Points:</strong> {{ player['Points'] }}</li>
-                    <li><strong>Tournois joués:</strong> {{ player['Tournaments'] }}</li>
-                    <!-- Ajoutez d'autres statistiques si nécessaire -->
+                    <li><strong>Classement:</strong> {{ player['rank'] }}</li>
+                    <li><strong>Points:</strong> {{ player['total_points'] }}</li>
+                    <li><strong>Tournois joués:</strong> {{ player['tournaments'] }}</li>
+                    <li><strong>Pays:</strong> {{ player['country'] }}</li>
                 </ul>
             </div>
         {% endif %}
